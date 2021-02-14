@@ -11,7 +11,7 @@ function solve(obj){
         throw new Error('Invalid request header: Invalid Version')
     }
 
-    if (obj.message === undefined || !(/[^<>\&\\'"]*$/gm.test(obj.message))){
+    if (obj.message === undefined || !(/^[^<>\\&'"]*$/gm.test(obj.message))){
         throw new Error('Invalid request header: Invalid Message')
     }
     return obj;
