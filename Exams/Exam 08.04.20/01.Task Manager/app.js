@@ -31,7 +31,7 @@ function solve() {
         article.appendChild(p2)
         article.appendChild(div)
 
-        openSection.children[1].appendChild(article);
+        openSection.lastElementChild.appendChild(article);
 
         taskInput.value = '';
         descriptionInput.value = '';
@@ -39,7 +39,7 @@ function solve() {
 
         redBtn.addEventListener('click', e => {article.remove()})
         greenBtn.addEventListener('click', e => {
-            progressSection.appendChild(article)
+            progressSection.lastElementChild.appendChild(article)
 
             greenBtn.classList.remove('green');
             greenBtn.classList.add('red')
@@ -52,7 +52,7 @@ function solve() {
             greenBtn.addEventListener('click', e => {article.remove()})
             redBtn.addEventListener('click', e => {
                 e.target.parentElement.remove();
-                completeSection.appendChild(article);
+                completeSection.lastElementChild.appendChild(article);
             })
         })
 
